@@ -2,7 +2,6 @@ import cv2
 import os
 import urllib.request
 
-# Ensure Haar cascade file is present
 cascade_url = "https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml"
 cascade_path = "haarcascade_frontalface_default.xml"
 
@@ -10,10 +9,8 @@ if not os.path.exists(cascade_path):
     print("Downloading Haar cascade file...")
     urllib.request.urlretrieve(cascade_url, cascade_path)
 
-# Load the Haar cascade
 face_cascade = cv2.CascadeClassifier(cascade_path)
 
-# Start video capture
 cap = cv2.VideoCapture(0)
 
 print("Press 'q' to quit.")
